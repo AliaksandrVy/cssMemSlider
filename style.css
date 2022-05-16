@@ -1,0 +1,98 @@
+#slider{/*положение слайдера*/
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+
+#slider{/*центровка слайдера*/
+    margin: 0 auto;
+}
+
+#slider article{/*изображения справа друг от друга*/
+    width: 25%;
+    float: left;
+}
+
+#slides .image{/*устанавливает общий размер блока изображения*/
+    width: 400%;
+    line-height: 0;
+}
+
+#overflow{/*скрывает все, что находится за пределами этого блока*/
+    width: 100%;
+    overflow: hidden;
+}
+
+article img{/*размер изображения слайдера*/
+    width: 100%;
+}
+
+#desktop:checked ~ #slider{/*размер всего слайдера*//**/
+    max-width: 960px; /*максимальная длинна*/
+}
+
+label, a{/*при наведении на перключатели курсор измениться*/
+    cursor: pointer;
+}
+
+.all input{
+    display: none;
+}
+
+#switch1:checked ~ #slides .image{
+    margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+    margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+    margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image{
+    margin-left: -300%;
+}
+
+#controls{
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 50px;
+}
+
+#active label{
+    border-radius: 10px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #bbb;
+}
+
+#active{
+    margin: 0 0 0 0;
+    text-align: center;
+}
+
+#active label:hover{
+    background: 76c8ff;
+    border-color: #777 !important;
+}
+
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4){
+    background-color: #18a3dd;
+    border-color: #18a3dd !important;
+}
+
+#slides .image{
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+@media (max-width: 320) {
+    #desktop:checked ~ #slider{/*размер всего слайдера*//**/
+        max-width: 320px; /*максимальная длинна*/
+    }
+}
